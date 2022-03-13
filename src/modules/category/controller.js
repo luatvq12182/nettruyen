@@ -1,5 +1,4 @@
 const CategoryRepo = require('./repo');
-
 const {
     BadRequestResponse,
     SuccessResponse,

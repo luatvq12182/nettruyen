@@ -15,6 +15,8 @@ const middlewares = [
         limit: '5mb'
     }),
 
+    express.static('public/upload'),
+
     morgan(':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] ":referrer" ":user-agent"'),
 
     cors({
