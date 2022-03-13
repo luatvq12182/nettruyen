@@ -6,6 +6,11 @@ const {
     uploadAttachments,
     deleteAttachments,
 } = require('./controller');
+const {
+    checkLogin,
+    checkAuth,
+    checkPermission,
+} = require('../user/controller');
 const UPLOAD_PATH = require('./constant');
 
 const storage = multer.diskStorage({
@@ -27,6 +32,9 @@ const upload = multer({
 const router = Router();
 
 router.get('/', getAttachments);
+
+router.use(checkLogin, checkAuth, checkPermission);
+
 router.post('/', upload.array('imgs'), uploadAttachments);
 router.delete('/', deleteAttachments);
 
