@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require('express');
 const middlewares = require('./middleware');
 const modules = require('../modules');
@@ -11,6 +12,16 @@ middlewares.forEach((mdw) => {
 
 modules.forEach(({ prefix, route }) => {
     app.use('/api' + prefix, route);
+});
+
+const PUBLIC_PATH = path.join(__dirname, '..', '..', '/public');
+
+app.get('/admin*', (_req, res) => {
+    res.sendFile(PUBLIC_PATH + '/admin/index.html')
+});
+
+app.get('*', (_req, res) => {
+    res.sendFile(PUBLIC_PATH + '/client/index.html')
 });
 
 const init = () => {
