@@ -15,7 +15,6 @@ const schema = new Schema(
         order: {
             type: Number,
             required: true,
-            unique: true
         },
         storyId: {
             type: Schema.Types.ObjectId,
@@ -25,8 +24,8 @@ const schema = new Schema(
         status: {
             type: Number,
             default: 0,
-            required: true
-        }
+            required: true,
+        },
     },
     {
         timestamps: true,

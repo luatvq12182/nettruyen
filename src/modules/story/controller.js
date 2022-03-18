@@ -1,4 +1,5 @@
 const StoryRepo = require('./repo');
+const AttachmentRepo = require('../attachment/repo');
 const {
     BadRequestResponse,
     SuccessResponse,
@@ -36,11 +37,29 @@ const getStory = async (req, res) => {
 
         const story = await StoryRepo.selectOne({ slug });
 
+        if (story && story.attachmentId) {
+            const attachment = await AttachmentRepo.selectOneById(
+                story.attachmentId
+            );
+
+            if (attachment) {
+                return new SuccessResponse(
+                    'SUCCESS',
+                    Object.assign(story.toObject(), {
+                        attachment: {
+                            _id: attachment._id,
+                            filename: attachment.filename,
+                        },
+                    })
+                ).send(res);
+            }
+        }
+
         return new SuccessResponse('SUCCESS', story).send(res);
     } catch (error) {
         return new BadRequestResponse('ERROR', error).send(res);
     }
-}
+};
 
 const createStory = async (req, res) => {
     try {
@@ -52,7 +71,7 @@ const createStory = async (req, res) => {
     } catch (error) {
         return new BadRequestResponse('ERROR', error).send(res);
     }
-}
+};
 
 const editStory = async (req, res) => {
     try {
@@ -68,7 +87,7 @@ const editStory = async (req, res) => {
     } catch (error) {
         return new BadRequestResponse('ERROR', error).send(res);
     }
-}
+};
 
 const deleteStory = async (req, res) => {
     try {
@@ -80,12 +99,12 @@ const deleteStory = async (req, res) => {
     } catch (error) {
         return new BadRequestResponse('ERROR', error).send(res);
     }
-}
+};
 
 module.exports = {
     getStories,
     getStory,
     createStory,
     editStory,
-    deleteStory
-}
+    deleteStory,
+};

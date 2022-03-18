@@ -17,6 +17,10 @@ const select = ({
         .sort(sort);
 };
 
+const selectOneById = (id) => {
+    return AttachmentModel.findById(id);
+};
+
 const insertMany = (data) => {
     return AttachmentModel.insertMany(data);
 };
@@ -28,6 +32,7 @@ const deleteBatch = async (ids) => {
 module.exports = {
     count,
     select,
+    selectOneById,
     insertMany,
-    deleteBatch
+    deleteBatch,
 };
