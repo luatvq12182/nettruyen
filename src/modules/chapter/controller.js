@@ -50,7 +50,16 @@ const createChapter = async (req, res) => {
     try {
         const payload = req.body;
 
-        const chapter = await ChapterRepo.insert(payload);
+        if (!payload.storyId) {
+            return new BadRequestResponse('ID NOT FOUND', null).send(res);
+        }
+
+        const count = await ChapterRepo.count(payload.storyId);
+
+        const chapter = await ChapterRepo.insert({
+            ...payload,
+            order: count + 1
+        });
 
         return new SuccessResponse('SUCCESS', chapter).send(res);
     } catch (error) {
@@ -74,6 +83,31 @@ const editChapter = async (req, res) => {
     }
 };
 
+const changeOrder = async (req, res) => {
+    try {
+        const { storyId, orderA, orderB } = req.body;
+
+        if (!storyId || !orderA || !orderB) {
+            return new BadRequestResponse('Không đủ dữ liệu!', null).send(res);
+        }
+
+        const chapterA = await ChapterRepo.selectOne({ storyId, order: orderA });
+        const chapterB = await ChapterRepo.selectOne({ storyId, order: orderB });
+
+        if (!chapterA || !chapterB) {
+            return new BadRequestResponse('Vị trí chương không hợp lệ', null).send(res);
+        }
+
+        await ChapterRepo.update({ _id: chapterA._id, order: orderB });
+        await ChapterRepo.update({ _id: chapterB._id, order: orderA });
+
+        return new SuccessResponse('SUCCESS', null).send(res);
+    } catch (error) {
+        console.log(error)
+        return new BadRequestResponse('ERROR', error).send(res);
+    }
+}
+
 const deleteChapter = async (req, res) => {
     try {
         const { ids } = req.body;
@@ -91,5 +125,6 @@ module.exports = {
     getChapterOfStory,
     createChapter,
     editChapter,
+    changeOrder,
     deleteChapter
 }

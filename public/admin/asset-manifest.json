@@ -1,18 +1,21 @@
 {
   "files": {
-    "main.css": "/admin/static/css/main.8a71e485.css",
-    "main.js": "/admin/static/js/main.69d167c4.js",
+    "main.css": "/admin/static/css/main.02213991.css",
+    "main.js": "/admin/static/js/main.ebbdc1d3.js",
     "static/js/187.00d9472c.chunk.js": "/admin/static/js/187.00d9472c.chunk.js",
     "static/css/199.44579bee.chunk.css": "/admin/static/css/199.44579bee.chunk.css",
-    "static/js/199.0d43438f.chunk.js": "/admin/static/js/199.0d43438f.chunk.js",
-    "static/js/395.9b767102.chunk.js": "/admin/static/js/395.9b767102.chunk.js",
-    "static/css/388.44579bee.chunk.css": "/admin/static/css/388.44579bee.chunk.css",
-    "static/js/388.3c0fecbf.chunk.js": "/admin/static/js/388.3c0fecbf.chunk.js",
-    "static/js/220.30c26534.chunk.js": "/admin/static/js/220.30c26534.chunk.js",
+    "static/js/199.22650a7a.chunk.js": "/admin/static/js/199.22650a7a.chunk.js",
+    "static/js/395.81b8b910.chunk.js": "/admin/static/js/395.81b8b910.chunk.js",
+    "static/css/849.31d6cfe0.chunk.css": "/admin/static/css/849.31d6cfe0.chunk.css",
+    "static/js/849.a64bc836.chunk.js": "/admin/static/js/849.a64bc836.chunk.js",
+    "static/js/228.b174108e.chunk.js": "/admin/static/js/228.b174108e.chunk.js",
     "static/js/27.abd2a82d.chunk.js": "/admin/static/js/27.abd2a82d.chunk.js",
-    "static/js/963.4101b240.chunk.js": "/admin/static/js/963.4101b240.chunk.js",
+    "static/css/858.44579bee.chunk.css": "/admin/static/css/858.44579bee.chunk.css",
+    "static/js/858.55b9b5e6.chunk.js": "/admin/static/js/858.55b9b5e6.chunk.js",
+    "static/js/33.ef107de2.chunk.js": "/admin/static/js/33.ef107de2.chunk.js",
+    "static/js/963.7b34cb0b.chunk.js": "/admin/static/js/963.7b34cb0b.chunk.js",
+    "static/js/156.ac91f728.chunk.js": "/admin/static/js/156.ac91f728.chunk.js",
     "static/js/466.c7238e3d.chunk.js": "/admin/static/js/466.c7238e3d.chunk.js",
-    "static/js/604.ab7079ae.chunk.js": "/admin/static/js/604.ab7079ae.chunk.js",
     "static/media/primeicons.svg": "/admin/static/media/primeicons.c6e2053303524e39530c.svg",
     "static/media/primeicons.eot": "/admin/static/media/primeicons.7fc4d8e224d1ff1b9c62.eot",
     "static/media/primeicons.woff": "/admin/static/media/primeicons.449aa8c65cdc5c2a8686.woff",
@@ -20,7 +23,7 @@
     "index.html": "/admin/index.html"
   },
   "entrypoints": [
-    "static/css/main.8a71e485.css",
-    "static/js/main.69d167c4.js"
+    "static/css/main.02213991.css",
+    "static/js/main.ebbdc1d3.js"
   ]
 }
