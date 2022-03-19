@@ -10,7 +10,7 @@ const getChaptersByStory = async (req, res) => {
 
         const chapters = await ChapterRepo.select({
             condition: { storyId },
-            select: '_id name order',
+            select: '_id name order createdAt updatedAt',
             page,
             limit,
         });
