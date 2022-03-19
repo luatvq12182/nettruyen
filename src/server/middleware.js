@@ -16,7 +16,7 @@ const middlewares = [
     }),
 
     express.static('public'),
-    express.static('public/upload'),
+    // express.static('public/upload'),
     // express.static('public/client'),
 
     morgan(':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] ":referrer" ":user-agent"'),
