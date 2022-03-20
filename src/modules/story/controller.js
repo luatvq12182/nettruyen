@@ -11,7 +11,7 @@ const getStories = async (req, res) => {
 
         const stories = await StoryRepo.select({
             condition: {},
-            select: '_id name slug createdAt updatedAt',
+            select: '_id name slug categories createdAt updatedAt',
             page,
             limit,
         });
@@ -83,7 +83,7 @@ const queryStory = async (req, res) => {
         const stories = await StoryRepo.select(
             {
                 condition,
-                select: '_id name slug createdAt updatedAt'
+                select: '_id name slug categories views createdAt updatedAt'
             },
         );
 
