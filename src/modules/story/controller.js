@@ -61,6 +61,47 @@ const getStory = async (req, res) => {
     }
 };
 
+const queryStory = async (req, res) => {
+    try {
+        const { name, categories, page, limit } = req.body;
+
+        const condition = {};
+
+        if (name) {
+            condition.name = {
+                $regex: name,
+                $options: 'i'
+            }
+        }
+
+        if (categories) {
+            condition.categories = {
+                $in: categories,
+            }
+        }
+
+        const stories = await StoryRepo.select(
+            {
+                condition,
+                select: '_id name slug createdAt updatedAt'
+            },
+        );
+
+        const count = await StoryRepo.count(condition);
+
+        const payload = {
+            page: Number(page),
+            limit: Number(limit),
+            total: count,
+            data: stories,
+        };
+
+        return new SuccessResponse('SUCCESS', payload).send(res);
+    } catch (error) {
+        return new BadRequestResponse('ERROR', error).send(res);
+    }
+};
+
 const createStory = async (req, res) => {
     try {
         const payload = req.body;
@@ -104,6 +145,7 @@ const deleteStory = async (req, res) => {
 module.exports = {
     getStories,
     getStory,
+    queryStory,
     createStory,
     editStory,
     deleteStory,

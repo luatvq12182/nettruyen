@@ -2,6 +2,7 @@ const { Router } = require('express');
 const {
     getStories,
     getStory,
+    queryStory,
     createStory,
     editStory,
     deleteStory,
@@ -16,6 +17,7 @@ const router = Router();
 
 router.get('/', getStories);
 router.get('/:slug', getStory);
+router.post('/queryStory', queryStory)
 
 router.use(checkLogin, checkAuth, checkPermission);
 

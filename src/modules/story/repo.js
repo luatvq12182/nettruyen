@@ -1,7 +1,7 @@
 const StoryModel = require('./model');
 
-const count = () => {
-    return StoryModel.count({});
+const count = (condition) => {
+    return StoryModel.count(condition);
 };
 
 const select = ({
