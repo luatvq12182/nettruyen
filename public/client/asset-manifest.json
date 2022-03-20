@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/client/static/css/main.f9bffa6b.css",
-    "main.js": "/client/static/js/main.05ccfa41.js",
+    "main.css": "/client/static/css/main.b04a7381.css",
+    "main.js": "/client/static/js/main.deaee650.js",
     "static/js/831.6999abfe.chunk.js": "/client/static/js/831.6999abfe.chunk.js",
     "static/js/631.dc3e79d7.chunk.js": "/client/static/js/631.dc3e79d7.chunk.js",
     "static/js/361.04e7ea9e.chunk.js": "/client/static/js/361.04e7ea9e.chunk.js",
@@ -9,11 +9,28 @@
     "static/js/477.e6c44dc3.chunk.js": "/client/static/js/477.e6c44dc3.chunk.js",
     "static/js/922.db8532b4.chunk.js": "/client/static/js/922.db8532b4.chunk.js",
     "static/js/182.d4362333.chunk.js": "/client/static/js/182.d4362333.chunk.js",
+    "static/media/bookerly.eot": "/client/static/media/bookerly.15e4165d595119bd7743.eot",
+    "static/media/bookerly.ttf": "/client/static/media/bookerly.79f3811e09e06b79a9f3.ttf",
+    "static/media/glyphicons-halflings-regular.svg": "/client/static/media/glyphicons-halflings-regular.060b2710bdbbe3dfe48b.svg",
+    "static/media/Minion.eot": "/client/static/media/Minion.35dda8509b10bc440fd6.eot",
+    "static/media/Minion.ttf": "/client/static/media/Minion.f50d3fde77dd6a27579d.ttf",
+    "static/media/Roboto-Regular.woff": "/client/static/media/Roboto-Regular.b8a595d132e4e48e4699.woff",
+    "static/media/RobotoCondensed-Regular.woff": "/client/static/media/RobotoCondensed-Regular.42c3bd4ed64ba5a262e6.woff",
+    "static/media/Roboto-Regular.eot": "/client/static/media/Roboto-Regular.4d300014e2f202aa9706.eot",
+    "static/media/RobotoCondensed-Regular.eot": "/client/static/media/RobotoCondensed-Regular.be9ca118e45e41df8f5b.eot",
     "service-worker.js": "/client/service-worker.js",
+    "static/media/glyphicons-halflings-regular.ttf": "/client/static/media/glyphicons-halflings-regular.4692b9ec53fd5972caa2.ttf",
+    "static/media/PatrickHand-Regular.woff": "/client/static/media/PatrickHand-Regular.2702bca36fa4a6b6710a.woff",
+    "static/media/PatrickHand-Regular.eot": "/client/static/media/PatrickHand-Regular.f2c67431d1df5b7de9cc.eot",
+    "static/media/NoticiaText-Regular.woff": "/client/static/media/NoticiaText-Regular.2424691cad5bf79a7bcc.woff",
+    "static/media/NoticiaText-Regular.eot": "/client/static/media/NoticiaText-Regular.58f26617435fe74e6430.eot",
+    "static/media/glyphicons-halflings-regular.woff": "/client/static/media/glyphicons-halflings-regular.82b1212e45a2bc35dd73.woff",
+    "static/media/glyphicons-halflings-regular.eot": "/client/static/media/glyphicons-halflings-regular.5be1347c682810f199c7.eot",
+    "static/media/glyphicons-halflings-regular.woff2": "/client/static/media/glyphicons-halflings-regular.be810be3a3e14c682a25.woff2",
     "index.html": "/client/index.html"
   },
   "entrypoints": [
-    "static/css/main.f9bffa6b.css",
-    "static/js/main.05ccfa41.js"
+    "static/css/main.b04a7381.css",
+    "static/js/main.deaee650.js"
   ]
 }
