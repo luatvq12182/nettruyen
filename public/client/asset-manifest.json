@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.css": "/client/static/css/main.b04a7381.css",
-    "main.js": "/client/static/js/main.6c009229.js",
+    "main.css": "/client/static/css/main.5972d0c4.css",
+    "main.js": "/client/static/js/main.c9a0df8a.js",
     "static/js/831.6999abfe.chunk.js": "/client/static/js/831.6999abfe.chunk.js",
     "static/js/631.dc3e79d7.chunk.js": "/client/static/js/631.dc3e79d7.chunk.js",
-    "static/js/361.04e7ea9e.chunk.js": "/client/static/js/361.04e7ea9e.chunk.js",
-    "static/js/496.3ed5c00f.chunk.js": "/client/static/js/496.3ed5c00f.chunk.js",
-    "static/js/477.e6c44dc3.chunk.js": "/client/static/js/477.e6c44dc3.chunk.js",
+    "static/js/361.c603eea0.chunk.js": "/client/static/js/361.c603eea0.chunk.js",
+    "static/js/496.c2b5d702.chunk.js": "/client/static/js/496.c2b5d702.chunk.js",
+    "static/js/477.3abbd09e.chunk.js": "/client/static/js/477.3abbd09e.chunk.js",
     "static/js/922.db8532b4.chunk.js": "/client/static/js/922.db8532b4.chunk.js",
     "static/js/182.d4362333.chunk.js": "/client/static/js/182.d4362333.chunk.js",
     "static/media/bookerly.eot": "/client/static/media/bookerly.15e4165d595119bd7743.eot",
@@ -30,7 +30,7 @@
     "index.html": "/client/index.html"
   },
   "entrypoints": [
-    "static/css/main.b04a7381.css",
-    "static/js/main.6c009229.js"
+    "static/css/main.5972d0c4.css",
+    "static/js/main.c9a0df8a.js"
   ]
 }
