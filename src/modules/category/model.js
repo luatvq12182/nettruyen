@@ -16,6 +16,14 @@ const scheme = new Schema(
                 unique: true,
             },
         },
+        title: {
+            type: String,
+            maxlength: 255
+        },
+        description: {
+            type: String,
+            maxlength: 1000
+        }
     },
     {
         timestamps: true,

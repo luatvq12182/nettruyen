@@ -26,6 +26,14 @@ const schema = new Schema(
             default: 0,
             required: true,
         },
+        title: {
+            type: String,
+            maxlength: 255,
+        },
+        description: {
+            type: String,
+            maxlength: 1000,
+        },
     },
     {
         timestamps: true,
