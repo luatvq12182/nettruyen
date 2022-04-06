@@ -25,7 +25,7 @@ const scheme = new Schema(
             maxlength: 1000
         },
         intro: {
-            type: String, 
+            type: String,
             maxlength: 5000
         }
     },
@@ -34,4 +34,4 @@ const scheme = new Schema(
     }
 );
 
-module.exports = model('Category', scheme);
+module.exports = model('Tag', scheme);
