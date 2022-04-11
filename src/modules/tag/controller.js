@@ -10,7 +10,7 @@ const getTags = async (req, res) => {
 
         const tags = await TagRepo.select({
             condition: {},
-            select: '_id name slug',
+            select: '_id name slug intro title description',
             page,
             limit,
         });

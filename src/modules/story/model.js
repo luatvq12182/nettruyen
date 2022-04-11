@@ -31,6 +31,12 @@ const schema = new Schema(
                 ref: 'Category',
             },
         ],
+        tags: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'Tag',
+            },
+        ],
         author: {
             type: String,
             maxlength: 255,

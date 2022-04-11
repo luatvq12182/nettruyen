@@ -4,6 +4,32 @@ const {
     SuccessResponse,
 } = require('../../server/response');
 
+const getNewChapters = async (req, res) => {
+    try {
+        const { page, limit } = req.query;
+
+        const chapters = await ChapterRepo.select({
+            condition: {},
+            select: '_id name order storyId',
+            page,
+            limit,
+            sort: {
+                createdAt: -1
+            }
+        });
+
+        const payload = {
+            page: Number(page),
+            limit: Number(limit),
+            data: chapters,
+        };
+
+        return new SuccessResponse('SUCCESS', payload).send(res);
+    } catch (error) {
+        return new BadRequestResponse('ERROR', error).send(res);
+    }
+};
+
 const getChaptersByStory = async (req, res) => {
     try {
         const { storyId, page, limit } = req.body;
@@ -34,12 +60,16 @@ const getChapterOfStory = async (req, res) => {
     try {
         const { storyId, order, isFull } = req.body;
 
-        const select = isFull ? '' : 'name content';
+        const select = isFull ? '' : 'name content title description';
 
-        const chapter = await ChapterRepo.selectOne({
-            storyId, order
-        }, select);
-        
+        const chapter = await ChapterRepo.selectOne(
+            {
+                storyId,
+                order,
+            },
+            select
+        );
+
         return new SuccessResponse('SUCCESS', chapter).send(res);
     } catch (error) {
         return new BadRequestResponse('ERROR', error).send(res);
@@ -58,7 +88,7 @@ const createChapter = async (req, res) => {
 
         const chapter = await ChapterRepo.insert({
             ...payload,
-            order: count + 1
+            order: count + 1,
         });
 
         return new SuccessResponse('SUCCESS', chapter).send(res);
@@ -91,11 +121,20 @@ const changeOrder = async (req, res) => {
             return new BadRequestResponse('Không đủ dữ liệu!', null).send(res);
         }
 
-        const chapterA = await ChapterRepo.selectOne({ storyId, order: orderA });
-        const chapterB = await ChapterRepo.selectOne({ storyId, order: orderB });
+        const chapterA = await ChapterRepo.selectOne({
+            storyId,
+            order: orderA,
+        });
+        const chapterB = await ChapterRepo.selectOne({
+            storyId,
+            order: orderB,
+        });
 
         if (!chapterA || !chapterB) {
-            return new BadRequestResponse('Vị trí chương không hợp lệ', null).send(res);
+            return new BadRequestResponse(
+                'Vị trí chương không hợp lệ',
+                null
+            ).send(res);
         }
 
         await ChapterRepo.update({ _id: chapterA._id, order: orderB });
@@ -103,10 +142,10 @@ const changeOrder = async (req, res) => {
 
         return new SuccessResponse('SUCCESS', null).send(res);
     } catch (error) {
-        console.log(error)
+        console.log(error);
         return new BadRequestResponse('ERROR', error).send(res);
     }
-}
+};
 
 const deleteChapter = async (req, res) => {
     try {
@@ -121,10 +160,11 @@ const deleteChapter = async (req, res) => {
 };
 
 module.exports = {
+    getNewChapters,
     getChaptersByStory,
     getChapterOfStory,
     createChapter,
     editChapter,
     changeOrder,
-    deleteChapter
-}
+    deleteChapter,
+};

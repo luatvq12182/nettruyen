@@ -10,7 +10,7 @@ const getCategories = async (req, res) => {
 
         const categories = await CategoryRepo.select({
             condition: {},
-            select: '_id name slug',
+            select: '_id name slug intro title description',
             page,
             limit,
         });

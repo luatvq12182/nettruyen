@@ -11,7 +11,7 @@ const getStories = async (req, res) => {
 
         const stories = await StoryRepo.select({
             condition: {},
-            select: '_id name slug categories createdAt updatedAt',
+            select: '_id name slug categories tags createdAt updatedAt',
             page,
             limit,
         });
@@ -63,29 +63,36 @@ const getStory = async (req, res) => {
 
 const queryStory = async (req, res) => {
     try {
-        const { name, categories, page, limit } = req.body;
+        const { name, categories, tags, page, limit, sort } = req.body;
 
         const condition = {};
 
         if (name) {
             condition.name = {
                 $regex: name,
-                $options: 'i'
-            }
+                $options: 'i',
+            };
         }
 
         if (categories) {
             condition.categories = {
                 $in: categories,
-            }
+            };
         }
 
-        const stories = await StoryRepo.select(
-            {
-                condition,
-                select: '_id name slug categories views createdAt updatedAt'
-            },
-        );
+        if (tags) {
+            condition.tags = {
+                $in: tags,
+            };
+        }
+
+        const stories = await StoryRepo.select({
+            condition,
+            select: '_id name slug categories tags views createdAt updatedAt',
+            sort,
+            page,
+            limit,
+        });
 
         const count = await StoryRepo.count(condition);
 

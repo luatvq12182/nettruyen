@@ -1,5 +1,6 @@
 const { Router } = require('express');
 const {
+    getNewChapters,
     getChaptersByStory,
     getChapterOfStory,
     createChapter,
@@ -15,6 +16,7 @@ const {
 
 const router = Router();
 
+router.get('/getNewChapters', getNewChapters);
 router.post('/getByStory', getChaptersByStory);
 router.post('/getChapterOfStory', getChapterOfStory);
 
