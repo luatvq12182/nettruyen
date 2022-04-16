@@ -23,6 +23,6 @@ router.use(checkLogin, checkAuth, checkPermission);
 
 router.post('/', createStory);
 router.put('/', editStory);
-router.delete('/', deleteStory)
+router.delete('/', deleteStory);
 
 module.exports = router;
