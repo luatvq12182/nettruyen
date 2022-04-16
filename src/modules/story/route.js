@@ -5,6 +5,7 @@ const {
     queryStory,
     createStory,
     editStory,
+    inscrementView,
     deleteStory,
 } = require('./controller');
 const {
@@ -17,6 +18,7 @@ const router = Router();
 
 router.get('/', getStories);
 router.get('/:slug', getStory);
+router.get('/:slug/inscrement', inscrementView);
 router.post('/queryStory', queryStory)
 
 router.use(checkLogin, checkAuth, checkPermission);

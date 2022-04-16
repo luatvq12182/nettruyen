@@ -121,6 +121,27 @@ const createStory = async (req, res) => {
     }
 };
 
+const inscrementView = async (req, res) => {
+    try {
+        const { slug } = req.params;
+
+        const story = await StoryRepo.selectOne({ slug });
+
+        if (story) {
+            await StoryRepo.update({
+                _id: story._id,
+                views: story.views + 1
+            });
+
+            return new SuccessResponse('SUCCESS', story.views).send(res);
+        }
+
+        return new BadRequestResponse('ERROR', null).send(res);
+    } catch (error) {
+        return new BadRequestResponse('ERROR', error).send(res);
+    }
+};
+
 const editStory = async (req, res) => {
     try {
         const payload = req.body;
@@ -156,4 +177,5 @@ module.exports = {
     createStory,
     editStory,
     deleteStory,
+    inscrementView
 };
