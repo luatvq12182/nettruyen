@@ -5,7 +5,7 @@ const cors = require('cors');
 const compression = require('compression')
 
 const middlewares = [
-    // helmet(),
+    helmet(),
 
     express.json({ limit: '5mb' }),
 
